@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Gampang untuk UMKM</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="js/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/@iconify/iconify@2.0.0/dist/iconify.min.js"></script>
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      
+    }
+    .dots-bg {
+      background-image: radial-gradient(circle, #e2e8f0 1px, transparent 1px);
+      background-size: 20px 20px;
+    }
+  </style>
+</head>
+<body class="font-sans text-gray-800 bg-white">
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-white shadow-md">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <a href="#hero" class="flex items-center gap-2">
+        <img src="img/lgo.png" alt="Logo UMKM" class="h-10 w-10 object-contain" />
+        <span class="font-bold text-xl ">Kemiri Web</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#hero" class="text-gray-700 hover:text-blue-600 font-medium transition">Home</a>
+        <a href="#paket" class="text-gray-700 hover:text-blue-600 font-medium transition">Paket</a>
+        <a href="#katalog" class="text-gray-700 hover:text-blue-600 font-medium transition">Katalog</a>
+        <a href="#testimoni" class="text-gray-700 hover:text-blue-600 font-medium transition">Testimoni</a>
+        <a href="#faq" class="text-gray-700 hover:text-blue-600 font-medium transition">FAQ</a>
+        <a href="https://wa.me/6281220488520" target="_blank" class="bg-blue-500 text-white px-5 py-2 rounded-lg font-semibold shadow hover:bg-blue-600 transition flex items-center gap-2">
+          <span class="iconify text-lg" data-icon="mdi:chat-processing-outline"></span> Chat
+        </a>
+      </div>
+      <!-- Hamburger -->
+      <button id="nav-toggle" class="md:hidden text-gray-700 focus:outline-none text-3xl">
+        <span class="iconify" data-icon="mdi:menu"></span>
+      </button>
+    </nav>
+    <!-- Mobile Nav -->
+    <div id="nav-mobile" class="md:hidden fixed inset-0 bg-white bg-opacity-95 z-50 flex flex-col items-center justify-center gap-8 text-xl font-semibold text-gray-700 hidden">
+      <a href="#hero" class="hover:text-blue-600" onclick="toggleNav()">Home</a>
+      <a href="#paket" class="hover:text-blue-600" onclick="toggleNav()">Paket</a>
+      <a href="#katalog" class="hover:text-blue-600" onclick="toggleNav()">Katalog</a>
+      <a href="#testimoni" class="hover:text-blue-600" onclick="toggleNav()">Testimoni</a>
+      <a href="#faq" class="hover:text-blue-600" onclick="toggleNav()">FAQ</a>
+      <a href="https://wa.me/6281220488520" target="_blank" class="bg-blue-500 text-white px-8 py-3 rounded-lg shadow hover:bg-blue-600 flex items-center gap-2" onclick="toggleNav()">
+        <span class="iconify text-lg" data-icon="mdi:chat-processing-outline"></span> Chat
+      </a>
+      <button onclick="toggleNav()" class="absolute top-6 right-6 text-3xl text-gray-700"><span class="iconify" data-icon="mdi:close"></span></button>
+    </div>
+  </header>
+
+  <script>
+    // Responsive nav toggle
+    function toggleNav() {
+      const nav = document.getElementById('nav-mobile');
+      nav.classList.toggle('hidden');
+    }
+    document.getElementById('nav-toggle').onclick = toggleNav;
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        if (this.getAttribute('href').length > 1) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white pt-24 pb-20 px-4 relative overflow-hidden" id="hero" style="min-height:calc(100vh - 64px)">
+    <div class="dots-bg absolute inset-0 opacity-10"></div>
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10" data-aos="fade-up">
+      <div data-aos="fade-right" data-aos-delay="200">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Bikin Website UMKM Tanpa Ribet</h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90">Ceritain usahamu sebentar aja, sisanya kami yang pikirin. Cepat, murah, dan sesuai kebutuhan!</p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#katalog" class="bg-white text-blue-600 px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2 text-xl" data-icon="mdi:rocket-launch"></span>
+            Mulai Sekarang
+          </a>
+          <a href="https://wa.me/628123456789" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-green-600 transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2 text-xl" data-icon="mdi:whatsapp"></span>
+            Chat WhatsApp
+          </a>
+        </div>
+      </div>
+      <div data-aos="fade-left" data-aos-delay="400" class="text-center">
+        <img src="img/cv.svg" alt="Website Development" class="w-full max-w-md mx-auto drop-shadow-2xl">
+      </div>
+    </div>
+    <!-- Wave SVG -->
+    <div class="absolute bottom-0 left-0 w-full">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-auto" style="transform: rotate(180deg);">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f8fafc" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Keunggulan Layanan -->
+  <section class="py-20 px-6 bg-gray-50" id="keunggulan">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">Mengapa Pilih Kami?</h2>
+        <p class="text-xl text-gray-600">Kami bikin proses bikin website jadi super gampang</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center" data-aos="fade-up" data-aos-delay="100">
+          <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="iconify text-3xl text-blue-600" data-icon="mdi:clock-fast"></span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Cepat Jadi</h3>
+          <p class="text-gray-600">Website siap dalam 3-7 hari, langsung bisa dipakai untuk jualan</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="iconify text-3xl text-green-600" data-icon="mdi:cash-multiple"></span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Harga Terjangkau</h3>
+          <p class="text-gray-600">Mulai dari Rp500.000, sesuai budget usaha kecil</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center" data-aos="fade-up" data-aos-delay="300">
+          <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="iconify text-3xl text-purple-600" data-icon="mdi:account-check"></span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Gampang Banget</h3>
+          <p class="text-gray-600">Nggak perlu ngerti teknologi, cukup ceritain usahamu</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 text-center" data-aos="fade-up" data-aos-delay="400">
+          <div class="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="iconify text-3xl text-orange-600" data-icon="mdi:whatsapp"></span>
+          </div>
+          <h3 class="text-xl font-bold mb-4">Support WhatsApp</h3>
+          <p class="text-gray-600">Bisa konsultasi langsung via WhatsApp, respon cepat</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ilustrasi Proses -->
+  <section class="py-20 px-6 bg-white" id="proses">
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <div data-aos="fade-right">
+        <img src="https://img.freepik.com/free-vector/team-collaboration-concept-illustration_114360-2841.jpg" alt="Tim Kolaborasi" class="w-full max-w-md mx-auto">
+      </div>
+      <div data-aos="fade-left">
+        <h2 class="text-4xl font-bold mb-6">Proses Super Gampang</h2>
+        <div class="space-y-6">
+          <div class="flex items-start">
+            <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Ceritain Usahamu</h3>
+              <p class="text-gray-600">Kamu tinggal ceritain jenis usaha, produk, dan budget yang dimiliki</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">2</div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Kami Desain</h3>
+              <p class="text-gray-600">Tim kami yang urus desain, coding, dan semua hal teknis</p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div class="bg-blue-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">3</div>
+            <div>
+              <h3 class="font-semibold text-lg mb-2">Website Jadi</h3>
+              <p class="text-gray-600">Website siap pakai, langsung bisa untuk jualan online</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+    <!-- Katalog UMKM -->
+    <section class="bg-white py-20 px-6" id="katalog">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16" data-aos="fade-up">
+          <h2 class="text-4xl font-bold mb-4">Katalog Produk & Jasa UMKM</h2>
+          <p class="text-xl text-gray-600">Contoh produk dan jasa yang pernah kami bantu online-kan</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=300&fit=crop" alt="Jamu Tradisional" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-bold mb-2">Jamu Tradisional Bu Lilis</h3>
+            <p class="text-gray-600 text-center">Produk jamu sehat alami, kini bisa dipesan online dan dikirim ke seluruh Indonesia.</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://images.pexels.com/photos/3763188/pexels-photo-3763188.jpeg?auto=compress&w=400&h=300&fit=crop" alt="Servis AC Pak Dedi" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-bold mb-2">Servis AC Pak Dedi</h3>
+            <p class="text-gray-600 text-center">Jasa servis AC panggilan, booking online, respon cepat, dan garansi pengerjaan.</p>
+          </div>
+          <div class="bg-gray-50 rounded-xl shadow-lg p-6 flex flex-col items-center" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&w=400&h=300&fit=crop" alt="Toko Kue Sari Rasa" class="w-full h-40 object-cover rounded-lg mb-4">
+            <h3 class="text-xl font-bold mb-2">Toko Kue Sari Rasa</h3>
+            <p class="text-gray-600 text-center">Aneka kue rumahan, pesanan online, dan pengiriman area Jabodetabek.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+  <!-- Paket Harga -->
+  <section class="bg-gray-50 py-20 px-6" id="paket">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">Pilih Paket yang Cocok</h2>
+        <p class="text-xl text-gray-600">Semua paket sudah include hosting dan domain</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="iconify text-2xl text-blue-600" data-icon="mdi:package-variant"></span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Paket Mulai Jualan</h3>
+            <div class="text-3xl font-bold text-blue-600 mb-2">Rp500.000</div>
+            <p class="text-gray-500">Cocok untuk usaha baru</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              1 Halaman Website
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Info Produk & Kontak
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              WhatsApp Button
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Mobile Friendly
+            </li>
+          </ul>
+          <a href="#form" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2" data-icon="mdi:rocket-launch"></span>
+            Pilih Paket Ini
+          </a>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-xl border-2 border-blue-500 relative transform scale-105" data-aos="fade-up" data-aos-delay="200">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-semibold">TERPOPULER</span>
+          </div>
+          <div class="text-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="iconify text-2xl text-blue-600" data-icon="mdi:star"></span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Paket Anti Ribet</h3>
+            <div class="text-3xl font-bold text-blue-600 mb-2">Rp900.000</div>
+            <p class="text-gray-500">Paling banyak dipilih</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              3 Halaman (Home, Produk, Kontak)
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Form Kontak & WhatsApp
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Desain Disesuaikan
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              SEO Basic
+            </li>
+          </ul>
+          <a href="#form" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2" data-icon="mdi:star"></span>
+            Pilih Paket Ini
+          </a>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-center mb-6">
+            <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="iconify text-2xl text-blue-600" data-icon="mdi:crown"></span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Paket Profesional</h3>
+            <div class="text-3xl font-bold text-blue-600 mb-2">Rp1.500.000</div>
+            <p class="text-gray-500">Untuk usaha yang serius</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Sampai 5 Halaman
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Tampilan Modern & Responsif
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Panel Admin (opsional)
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              SEO Advanced
+            </li>
+          </ul>
+          <a href="#form" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold hover:bg-blue-600 transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2" data-icon="mdi:crown"></span>
+            Pilih Paket Ini
+          </a>
+        </div>
+
+        <!-- Paket Konsultasi Baru -->
+        <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 border-2 border-green-500" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-center mb-6">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <span class="iconify text-2xl text-green-600" data-icon="mdi:account-cog"></span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">Paket Konsultasi</h3>
+            <div class="text-3xl font-bold text-green-600 mb-2">Sesuai Budget</div>
+            <p class="text-gray-500">Fleksibel & Custom</p>
+          </div>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Konsultasi Gratis
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Desain Custom
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Fitur Sesuai Kebutuhan
+            </li>
+            <li class="flex items-center">
+              <span class="iconify text-green-500 mr-3" data-icon="mdi:check-circle"></span>
+              Pembayaran Bertahap
+            </li>
+          </ul>
+          <a href="https://wa.me/628123456789?text=Halo, saya mau konsultasi untuk website UMKM dengan budget..." class="w-full bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition duration-300 inline-flex items-center justify-center">
+            <span class="iconify mr-2" data-icon="mdi:whatsapp"></span>
+            Konsultasi Sekarang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimoni -->
+  <section class="py-20 px-6 bg-white" id="testimoni">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">Apa Kata Klien Kami</h2>
+        <p class="text-xl text-gray-600">Sudah ratusan UMKM yang percaya dengan kami</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-gray-50 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="100">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+              <span class="iconify text-blue-600" data-icon="mdi:account"></span>
+            </div>
+            <div>
+              <h4 class="font-semibold">Bu Lilis</h4>
+              <p class="text-gray-500 text-sm">Jamu Tradisional</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">"Saya gaptek, tapi websitenya jadi cepat. Nggak ribet sama sekali. Sekarang jamu saya bisa dijual online!"</p>
+          <div class="flex text-yellow-400 mt-4">
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+          </div>
+        </div>
+        <div class="bg-gray-50 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+              <span class="iconify text-blue-600" data-icon="mdi:account"></span>
+            </div>
+            <div>
+              <h4 class="font-semibold">Pak Dedi</h4>
+              <p class="text-gray-500 text-sm">Servis AC</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">"Awalnya bingung harus mulai dari mana. Sekarang website saya udah online dan dapat orderan dari mana-mana!"</p>
+          <div class="flex text-yellow-400 mt-4">
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+            <span class="iconify" data-icon="mdi:star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-gray-50 py-20 px-6" id="faq">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl font-bold mb-4">Permintaan yang Sering Kami Layani</h2>
+        <p class="text-xl text-gray-600">Jangan khawatir, permintaan seperti ini sudah sering kami tangani. Kami mengerti bahwa setiap usaha punya kebutuhan unik — dan kami siap bantu!</p>
+      </div>
+      <div class="bg-white rounded-2xl shadow-xl p-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        <!-- Chat Header -->
+        <div class="flex items-center mb-6 pb-4 border-b border-gray-200">
+          <div class="bg-blue-500 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+            <span class="iconify text-white text-2xl" data-icon="mdi:chat-processing-outline"></span>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg">Tim Website UMKM</h3>
+            <p class="text-sm text-gray-500">Online • Respon cepat</p>
+          </div>
+        </div>
+        <!-- Chat Messages -->
+        <div class="space-y-4 max-h-96 overflow-y-auto">
+          <!-- Message 1 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="200">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Bisa nggak web-nya pakai warna sesuai warna usaha saya?”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="300">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Tentu! Kamu cukup kirim warna atau logo usahamu, dan kami sesuaikan tampilannya.</p>
+            </div>
+          </div>
+          <!-- Message 2 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="400">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Saya mau ada tombol WhatsApp di bawah ya biar langsung chat.”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="500">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Sudah jadi fitur standar semua paket. Bisa kami pasang tombol WA di bagian atas, tengah, dan bawah.</p>
+            </div>
+          </div>
+          <!-- Message 3 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="600">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Saya nggak tahu harus pilih tampilan yang mana, terserah deh yang bagus.”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="700">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Tenang, kami sudah siapkan rekomendasi template terbaik berdasarkan jenis usahamu. Kamu cukup beri info usahamu, kami bantu pilihkan tampilan yang paling cocok.</p>
+            </div>
+          </div>
+          <!-- Message 4 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="800">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Web-nya bisa saya edit sendiri nggak nanti?”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="900">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Kalau kamu ambil paket premium, kamu bisa menambahkan halaman atau mengedit sendiri. Untuk paket hemat, kami bantu semua agar kamu tinggal pakai.</p>
+            </div>
+          </div>
+          <!-- Message 5 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="1000">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Boleh cicil atau DP dulu?”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="1100">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Bisa. Kami menerima sistem DP minimal 50% dan pelunasan setelah website selesai.</p>
+            </div>
+          </div>
+          <!-- Message 6 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="1200">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Saya nggak ngerti soal domain, email, atau hosting. Gimana tuh?”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="1300">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Tenang. Kami urus semuanya untukmu, mulai dari domain, email bisnis, sampai hosting — kamu cukup duduk santai sambil usaha tetap jalan.</p>
+            </div>
+          </div>
+          <!-- Message 7 -->
+          <div class="flex justify-start" data-aos="fade-right" data-aos-delay="1400">
+            <div class="bg-gray-100 rounded-2xl rounded-bl-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-gray-400 text-lg mt-0.5" data-icon="mdi:account-circle-outline"></span>
+              <p class="text-sm">“Saya sibuk, nanti lama bales WA-nya ya.”</p>
+            </div>
+          </div>
+          <div class="flex justify-end" data-aos="fade-left" data-aos-delay="1500">
+            <div class="bg-blue-50 text-blue-900 rounded-2xl rounded-br-md px-4 py-3 max-w-xs flex items-start gap-2">
+              <span class="iconify text-blue-400 text-lg mt-0.5" data-icon="mdi:lightbulb-on-outline"></span>
+              <p class="text-sm">Gak masalah. Kamu bisa kirim data dasar dulu, dan sisanya kami bantu atur hingga web selesai.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Chat Input Area -->
+        <div class="mt-6 pt-4 border-t border-gray-200">
+          <form class="flex items-center bg-gray-100 rounded-full px-4 py-2" onsubmit="event.preventDefault(); var msg=this.querySelector('input').value; if(msg){window.open('https://wa.me/6281220488520?text='+encodeURIComponent(msg),'_blank');}">
+            <span class="iconify text-blue-400 mr-2" data-icon="mdi:chat-processing-outline"></span>
+            <input type="text" placeholder="Tulis pertanyaan kamu..." class="flex-1 bg-transparent outline-none text-sm">
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-full hover:bg-blue-600 transition duration-300">
+              <span class="iconify text-xl" data-icon="mdi:send-circle-outline"></span>
+            </button>
+          </form>
+          <p class="text-xs text-gray-500 mt-2 text-center">💡 Klik tombol di bawah untuk chat langsung dengan kami</p>
+        </div>
+      </div>
+      <!-- CTA Button -->
+      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="1600">
+        <a href="https://wa.me/6281220488520" class="inline-flex items-center bg-blue-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition duration-300 shadow-lg hover:shadow-xl">
+          <span class="iconify mr-2 text-xl" data-icon="mdi:chat-processing-outline"></span>
+          Chat Tim UMKM Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulir CTA -->
+  <section class="py-20 px-6 text-center bg-white" id="form">
+    <div class="max-w-2xl mx-auto" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-6">Siap Mulai Tanpa Ribet?</h2>
+      <p class="text-xl mb-8 text-gray-600">Ceritain usaha kamu dikit aja. Kami langsung bantu bikin websitenya.</p>
+      <form class="space-y-6 mb-8">
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" placeholder="Nama Kamu" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+          <input type="text" placeholder="Jenis Usaha" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        </div>
+        <input type="email" placeholder="Email Aktif" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        <textarea placeholder="Ceritain usahamu (opsional)" rows="4" class="w-full p-4 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"></textarea>
+        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg text-lg font-semibold hover:bg-blue-700 transition duration-300 inline-flex items-center justify-center">
+          <span class="iconify mr-2" data-icon="mdi:send"></span>
+          Kirim Sekarang
+        </button>
+      </form>
+      <div class="border-t pt-8">
+        <p class="text-lg mb-4">Atau hubungi langsung lewat WhatsApp:</p>
+        <a href="https://wa.me/628123456789" class="inline-flex items-center bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-green-600 transition duration-300">
+          <span class="iconify mr-2 text-xl" data-icon="mdi:whatsapp"></span>
+          Chat WhatsApp Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-12 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <div class="mb-8">
+        <h3 class="text-2xl font-bold mb-4">Website Gampang untuk UMKM</h3>
+        <p class="text-gray-300">Bikin website jadi gampang, cepat, dan murah</p>
+      </div>
+      <div class="flex justify-center space-x-6 mb-8">
+        <a href="https://wa.me/628123456789" class="text-gray-300 hover:text-white transition duration-300">
+          <span class="iconify text-2xl" data-icon="mdi:whatsapp"></span>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <span class="iconify text-2xl" data-icon="mdi:instagram"></span>
+        </a>
+        <a href="#" class="text-gray-300 hover:text-white transition duration-300">
+          <span class="iconify text-2xl" data-icon="mdi:facebook"></span>
+        </a>
+      </div>
+      <div class="border-t border-gray-700 pt-8">
+        <p class="text-gray-400">&copy; 2024 Website Gampang untuk UMKM. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky WhatsApp Button (Mobile Only) -->
+  <a href="https://wa.me/628123456789" class="fixed bottom-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-6 py-3 rounded-full shadow-lg flex items-center z-50 md:hidden hover:bg-green-600 transition duration-300">
+    <span class="iconify mr-2 text-xl" data-icon="mdi:whatsapp"></span>
+    Chat WhatsApp
+  </a>
+
+  <script src="js/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>
